@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://taskq.outlabs.io</loc></url>
+  <url><loc>https://taskq.outlabs.io/api/claim-and-heartbeat/</loc></url>
+  <url><loc>https://taskq.outlabs.io/api/enqueue/</loc></url>
+  <url><loc>https://taskq.outlabs.io/api/http-facade/</loc></url>
+  <url><loc>https://taskq.outlabs.io/concepts/fencing-and-settles/</loc></url>
+  <url><loc>https://taskq.outlabs.io/concepts/jobs-and-status/</loc></url>
+  <url><loc>https://taskq.outlabs.io/concepts/sql-first-contract/</loc></url>
+  <url><loc>https://taskq.outlabs.io/getting-started/install/</loc></url>
+  <url><loc>https://taskq.outlabs.io/getting-started/introduction/</loc></url>
+  <url><loc>https://taskq.outlabs.io/getting-started/quickstart/</loc></url>
+  <url><loc>https://taskq.outlabs.io/operations/housekeeping/</loc></url>
+  <url><loc>https://taskq.outlabs.io/operations/redrive-and-dlq/</loc></url>
+  <url><loc>https://taskq.outlabs.io/reference/configuration/</loc></url>
+</urlset>
