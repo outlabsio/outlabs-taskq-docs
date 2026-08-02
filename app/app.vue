@@ -16,7 +16,7 @@ useHead(() => ({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   link: [
-    { rel: 'icon', type: 'image/svg+xml', href: '/outlabsTaskqIcon.svg' },
+    { rel: 'icon', type: 'image/svg+xml', href: '/outlabsTaskqIcon-mark.svg' },
     { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
     { rel: 'shortcut icon', href: '/favicon.ico' },
     { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
@@ -32,7 +32,7 @@ useHead(() => ({
           '@id': 'https://outlabs.io/#organization',
           'name': 'OutLabs LLC',
           'url': 'https://outlabs.io',
-          'logo': `${siteUrl}/outlabsTaskqIcon.svg`,
+          'logo': `${siteUrl}/outlabsTaskqIcon-mark.svg`,
           'sameAs': ['https://github.com/outlabsio']
         },
         {
@@ -40,7 +40,7 @@ useHead(() => ({
           '@id': `${siteUrl}/#website`,
           'url': siteUrl,
           'name': 'OutlabsTaskq Documentation',
-          'description': 'Documentation for library-first authentication and authorization in FastAPI.',
+          'description': 'Documentation for OutlabsTaskq — a Postgres-native task queue for Python fleets.',
           'publisher': { '@id': 'https://outlabs.io/#organization' },
           'inLanguage': 'en'
         },

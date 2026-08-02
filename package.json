@@ -4,9 +4,10 @@
   "type": "module",
   "scripts": {
     "seo:generate": "bun scripts/generate-seo.mjs",
-    "build": "bun run seo:generate && nuxt generate",
-    "build:production": "NUXT_SITE_URL=https://taskq.outlabs.io bun run seo:generate && NUXT_SITE_URL=https://taskq.outlabs.io nuxt generate",
-    "build:staging": "NUXT_SITE_URL=https://taskq-staging.outlabs.io bun run seo:generate && NUXT_SITE_URL=https://taskq-staging.outlabs.io nuxt generate",
+    "brand:generate": "bun scripts/generate-brand-assets.mjs",
+    "build": "bun run brand:generate && bun run seo:generate && nuxt generate",
+    "build:production": "NUXT_SITE_URL=https://taskq.outlabs.io bun run brand:generate && NUXT_SITE_URL=https://taskq.outlabs.io bun run seo:generate && NUXT_SITE_URL=https://taskq.outlabs.io nuxt generate",
+    "build:staging": "NUXT_SITE_URL=https://taskq-staging.outlabs.io bun run brand:generate && NUXT_SITE_URL=https://taskq-staging.outlabs.io bun run seo:generate && NUXT_SITE_URL=https://taskq-staging.outlabs.io nuxt generate",
     "dev": "nuxt dev",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -38,7 +39,9 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.16.0",
+    "@resvg/resvg-js": "^2.6.2",
     "eslint": "^10.7.0",
+    "sharp": "^0.35.3",
     "typescript": "^6.0.3",
     "vue-tsc": "^3.3.7",
     "wrangler": "^4.78.0"

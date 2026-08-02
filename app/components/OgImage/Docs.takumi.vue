@@ -20,7 +20,7 @@ defineProps<{
     <div class="flex flex-col justify-between flex-1 px-20 py-16">
       <div class="flex items-center justify-between gap-8">
         <img
-          src="/outlabsTaskqLogo.svg"
+          src="/outlabsTaskqLogo-dark.svg"
           width="330"
           height="84"
           alt="OutlabsTaskq"

@@ -11,7 +11,7 @@ const stack = [
   'i-simple-icons-fastapi',
   'i-simple-icons-python',
   'i-simple-icons-postgresql',
-  'i-simple-icons-pypi'
+  'i-simple-icons-github'
 ]
 
 const ownershipFeatures = [
@@ -35,7 +35,7 @@ const ownershipFeatures = [
 const capabilities = [
   {
     title: 'Typed enqueue',
-    description: 'created / existed / replaced / skipped_locked — never silent null on conflict.',
+    description: 'created / existed — reject-only uniqueness, never silent null on conflict.',
     icon: 'i-lucide-plus-circle',
     to: '/api/enqueue'
   },
@@ -46,47 +46,59 @@ const capabilities = [
     to: '/api/claim-and-heartbeat'
   },
   {
-    title: 'Handler results',
-    description: 'Complete, Snooze, Cancel, Retry — mapped to SQL without burning budget on snooze.',
-    icon: 'i-lucide-list-checks',
-    to: '/concepts/fencing-and-settles'
+    title: 'Atomic follow-ups',
+    description: 'Parent settle and child inserts commit together via declared Followup targets.',
+    icon: 'i-lucide-git-branch',
+    to: '/api/follow-ups'
+  },
+  {
+    title: 'Workflows & schedules',
+    description: 'Sealed dependency graphs and database-time cron schedules owned by Postgres.',
+    icon: 'i-lucide-workflow',
+    to: '/api/workflows-and-schedules'
   },
   {
     title: 'HTTP facade',
-    description: 'Mount FastAPI routes for fleets that must not hold database credentials.',
+    description: 'Mount the FastAPI facade for fleets that must not hold database credentials.',
     icon: 'i-lucide-server',
     to: '/api/http-facade'
   },
   {
-    title: 'Housekeeping',
-    description: 'Tick, lease reaper, schedules — NOTIFY for latency, poll for correctness.',
-    icon: 'i-lucide-timer',
-    to: '/operations/housekeeping'
+    title: 'Durable admission',
+    description: 'Reserve / finish / cancel two-phase admission without inventing a second outbox.',
+    icon: 'i-lucide-ticket',
+    to: '/api/durable-admission'
   },
   {
-    title: 'Redrive',
-    description: 'Failed rows are the DLQ. Inspect, then redrive without hand UPDATEs.',
-    icon: 'i-lucide-rotate-ccw',
-    to: '/operations/redrive-and-dlq'
+    title: 'Workflow continuations',
+    description: 'Grow a sealed workflow safely through a compiled, hash-pinned member policy.',
+    icon: 'i-lucide-git-fork',
+    to: '/api/workflow-continuations'
+  },
+  {
+    title: 'Trusted effects',
+    description: 'Fence co-resident domain mutations against the exact active TaskQ attempt.',
+    icon: 'i-lucide-lock-keyhole',
+    to: '/api/trusted-effects'
   }
 ]
 
 const docs = [
   {
     title: 'Read the introduction',
-    description: 'Why a Postgres-native queue, and how it relates to outlabs-auth.',
+    description: '0.1.0a18 / SQL 0.2.6 — what ships and why the contract is SQL-first.',
     icon: 'i-lucide-book-open',
     to: '/getting-started/introduction'
   },
   {
     title: 'Install extras',
-    description: 'Core, [http], and optional [outlabs] dependency tiers.',
+    description: 'Pin the GitHub Release wheel, then taskq migrate / verify.',
     icon: 'i-lucide-download',
     to: '/getting-started/install'
   },
   {
     title: 'Quickstart',
-    description: 'Define a task, enqueue with typed results, run a worker.',
+    description: 'Task + TaskRegistry, enqueue, and taskq worker against Postgres.',
     icon: 'i-lucide-zap',
     to: '/getting-started/quickstart'
   }
@@ -126,7 +138,7 @@ defineOgImage('Docs', {
 
       <template #headline>
         <UBadge
-          label="Pre-alpha · design-complete"
+          label="Alpha · 0.1.0a18"
           icon="i-lucide-package"
           color="primary"
           variant="subtle"
@@ -140,7 +152,7 @@ defineOgImage('Docs', {
       </template>
 
       <template #description>
-        OutlabsTaskq is a SQL-first job queue for Python fleets: claim, fence, retry, and settle through PL/pgSQL — with a typed Python client and an optional FastAPI facade.
+        OutlabsTaskq is a SQL-first job queue for Python fleets: claim, fence, retry, and settle through PL/pgSQL — with a typed Python client, worker CLI, optional FastAPI facade, follow-ups, workflows, schedules, continuations, and trusted effects. Current release: 0.1.0a18.
       </template>
 
       <template #links>
@@ -187,16 +199,16 @@ defineOgImage('Docs', {
         </div>
 
         <div class="bg-default p-5 sm:p-7">
-          <pre class="overflow-x-auto font-mono text-[13px] leading-6 text-toned"><code><span class="text-primary">from</span> taskq <span class="text-primary">import</span> TaskQ, Complete
+          <pre class="overflow-x-auto font-mono text-[13px] leading-6 text-toned"><code><span class="text-primary">from</span> taskq <span class="text-primary">import</span> Task, TaskQ, TaskRegistry
 
-tq = TaskQ(dsn=DATABASE_URL, queues=[<span class="text-primary">"courts"</span>])
+DOUBLE = Task(name=<span class="text-primary">"demo.double"</span>, queue=<span class="text-primary">"demo"</span>, …)
+registry = TaskRegistry((DOUBLE,))
 
-<span class="text-primary">@</span>tq.task(queue=<span class="text-primary">"courts"</span>, retry=<span class="text-primary">5</span>)
-<span class="text-primary">async def</span> scrape(ctx, payload: dict):
-    data = <span class="text-primary">await</span> do_scrape(payload)
-    <span class="text-primary">return</span> Complete(result={<span class="text-primary">"n"</span>: len(data)})
+tq = TaskQ.from_dsn(DATABASE_URL, registry=registry)
+result = <span class="text-primary">await</span> tq.enqueue(DOUBLE, {<span class="text-primary">"value"</span>: <span class="text-primary">3</span>})
+<span class="text-muted"># result.status in {"created", "existed"}</span>
 
-<span class="text-primary">await</span> tq.run()</code></pre>
+<span class="text-muted"># then: taskq worker --dsn … --registry tasks:registry --queue demo</span></code></pre>
         </div>
 
         <div class="grid gap-px border-t border-default bg-default sm:grid-cols-3">
@@ -262,8 +274,8 @@ tq = TaskQ(dsn=DATABASE_URL, queues=[<span class="text-primary">"courts"</span>]
 
     <UPageSection
       headline="Capabilities"
-      title="What the protocol covers"
-      description="The docs track the intended public surface as the package lands. Start with concepts, then API and operations."
+      title="What ships in 0.1.0a18"
+      description="SQL contract 0.2.6 includes the queue kernel, orchestration surfaces, workflow continuations, and trusted host-effect fencing."
     >
       <UPageGrid>
         <UPageCard
@@ -283,7 +295,7 @@ tq = TaskQ(dsn=DATABASE_URL, queues=[<span class="text-primary">"courts"</span>]
     <UPageSection
       headline="Documentation"
       title="Read in order"
-      description="Design-complete today. Implementation is catching up — these pages are the contract."
+      description="The public docs match the 0.1.0a18 package surface. Deep design specs live in the GitHub repo."
     >
       <UPageGrid class="lg:grid-cols-3">
         <UPageCard
