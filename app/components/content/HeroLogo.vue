@@ -1,5 +1,12 @@
 <script setup lang="ts">
+const colorMode = useColorMode()
 const ready = ref(false)
+
+const src = computed(() =>
+  colorMode.value === 'dark'
+    ? '/outlabsTaskqLogo-dark.svg'
+    : '/outlabsTaskqLogo.svg'
+)
 
 onMounted(() => {
   requestAnimationFrame(() => {
@@ -18,9 +25,9 @@ onMounted(() => {
       aria-hidden="true"
     />
     <img
-      src="/outlabsTaskqLogo.svg"
+      :src="src"
       alt="OutlabsTaskq"
-      class="hero-logo__mark relative h-28 w-auto sm:h-40 brightness-0 dark:brightness-100"
+      class="hero-logo__mark relative h-28 w-auto sm:h-40"
     >
   </span>
 </template>

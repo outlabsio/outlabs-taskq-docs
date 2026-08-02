@@ -86,7 +86,7 @@ export default defineNuxtConfig({
   llms: {
     domain: siteUrl,
     title: 'OutlabsTaskq',
-    description: 'Library-first authentication and authorization for FastAPI.',
+    description: 'Library-first Postgres task queue for Python fleets — SQL contract, typed client, optional FastAPI facade.',
     full: {
       title: 'OutlabsTaskq — Full Documentation',
       description: 'Complete OutlabsTaskq implementer documentation.'

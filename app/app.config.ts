@@ -22,7 +22,7 @@ export default defineAppConfig({
     logo: {
       alt: 'OutlabsTaskq',
       light: '/outlabsTaskqLogo.svg',
-      dark: '/outlabsTaskqLogo.svg'
+      dark: '/outlabsTaskqLogo-dark.svg'
     },
     search: true,
     colorMode: true,
@@ -32,10 +32,10 @@ export default defineAppConfig({
       'target': '_blank',
       'aria-label': 'OutlabsTaskq on GitHub'
     }, {
-      'icon': 'i-simple-icons-pypi',
-      'to': 'https://pypi.org/project/outlabs-taskq/',
+      'icon': 'i-lucide-package',
+      'to': 'https://github.com/outlabsio/outlabs-taskq/releases/tag/v0.1.0a18',
       'target': '_blank',
-      'aria-label': 'outlabs-taskq on PyPI'
+      'aria-label': 'outlabs-taskq releases'
     }]
   },
   footer: {
@@ -47,21 +47,21 @@ export default defineAppConfig({
       'target': '_blank',
       'aria-label': 'GitHub'
     }, {
-      'icon': 'i-simple-icons-pypi',
-      'to': 'https://pypi.org/project/outlabs-taskq/',
+      'icon': 'i-lucide-package',
+      'to': 'https://github.com/outlabsio/outlabs-taskq/releases',
       'target': '_blank',
-      'aria-label': 'PyPI'
+      'aria-label': 'Releases'
     }]
   },
   toc: {
     title: 'On this page',
     bottom: {
       title: 'Resources',
-      edit: 'https://github.com/outlabsio/outlabs-taskq/edit/main/docs',
+      edit: 'https://github.com/outlabsio/outlabs-taskq-docs/edit/main/content',
       links: [{
         icon: 'i-lucide-package',
-        label: 'PyPI package',
-        to: 'https://pypi.org/project/outlabs-taskq/',
+        label: 'GitHub release',
+        to: 'https://github.com/outlabsio/outlabs-taskq/releases/tag/v0.1.0a18',
         target: '_blank'
       }, {
         icon: 'i-lucide-book-open',
