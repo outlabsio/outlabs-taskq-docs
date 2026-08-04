@@ -21,5 +21,6 @@
   <url><loc>https://taskq.outlabs.io/getting-started/testing/</loc></url>
   <url><loc>https://taskq.outlabs.io/operations/housekeeping/</loc></url>
   <url><loc>https://taskq.outlabs.io/operations/redrive-and-dlq/</loc></url>
+  <url><loc>https://taskq.outlabs.io/operations/standalone-scheduler/</loc></url>
   <url><loc>https://taskq.outlabs.io/reference/configuration/</loc></url>
 </urlset>
