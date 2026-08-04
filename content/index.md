@@ -1,7 +1,7 @@
 ---
 seo:
   title: OutlabsTaskq Docs
-  description: Postgres-native task queue for Python fleets — SQL-first contract, typed client, optional FastAPI facade. Version 0.1.0a19.
+  description: Postgres-native task queue for Python fleets — SQL-first contract, typed client, standalone scheduler, optional FastAPI facade. Version 0.1.0a23.
 title: OutlabsTaskq
 description: A Postgres-native job queue with a SQL-first contract, Python client, and optional FastAPI facade.
 navigation:
