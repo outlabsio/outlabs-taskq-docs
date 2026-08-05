@@ -86,19 +86,19 @@ const capabilities = [
 const docs = [
   {
     title: 'Read the introduction',
-    description: '0.1.0a19 / SQL 0.2.6 — what ships and why the contract is SQL-first.',
+    description: '0.1.0a26 / SQL 0.3.1 — what ships and why the contract is SQL-first.',
     icon: 'i-lucide-book-open',
     to: '/getting-started/introduction'
   },
   {
     title: 'Install extras',
-    description: 'Pin the GitHub Release wheel, then taskq migrate / verify.',
+    description: 'Pin the PyPI prerelease, then plan, migrate, bind, and verify safely.',
     icon: 'i-lucide-download',
     to: '/getting-started/install'
   },
   {
     title: 'Quickstart',
-    description: 'Task + TaskRegistry, enqueue, and taskq worker against Postgres.',
+    description: 'Task + TaskRegistry, enqueue, and taskq worker run against Postgres.',
     icon: 'i-lucide-zap',
     to: '/getting-started/quickstart'
   }
@@ -138,7 +138,7 @@ defineOgImage('Docs', {
 
       <template #headline>
         <UBadge
-          label="Alpha · 0.1.0a19"
+          label="Alpha · 0.1.0a26"
           icon="i-lucide-package"
           color="primary"
           variant="subtle"
@@ -152,7 +152,7 @@ defineOgImage('Docs', {
       </template>
 
       <template #description>
-        OutlabsTaskq is a SQL-first job queue for Python fleets: claim, fence, retry, and settle through PL/pgSQL — with a typed Python client, worker CLI, optional FastAPI facade, follow-ups, workflows, schedules, continuations, and trusted effects. Current release: 0.1.0a19.
+        OutlabsTaskq is a SQL-first job queue for Python fleets: claim, fence, retry, and settle through PL/pgSQL — with a typed Python client, complete operator CLI, standalone scheduler, optional FastAPI facade, follow-ups, workflows, schedules, continuations, and trusted effects. Current release: 0.1.0a26.
       </template>
 
       <template #links>
@@ -208,7 +208,7 @@ tq = TaskQ.from_dsn(DATABASE_URL, registry=registry)
 result = <span class="text-primary">await</span> tq.enqueue(DOUBLE, {<span class="text-primary">"value"</span>: <span class="text-primary">3</span>})
 <span class="text-muted"># result.status in {"created", "existed"}</span>
 
-<span class="text-muted"># then: taskq worker --dsn … --registry tasks:registry --queue demo</span></code></pre>
+<span class="text-muted"># then: taskq --dsn-env TASKQ_DSN worker run --registry tasks:registry --queue demo</span></code></pre>
         </div>
 
         <div class="grid gap-px border-t border-default bg-default sm:grid-cols-3">
@@ -274,8 +274,8 @@ result = <span class="text-primary">await</span> tq.enqueue(DOUBLE, {<span class
 
     <UPageSection
       headline="Capabilities"
-      title="What ships in 0.1.0a19"
-      description="SQL contract 0.2.6 includes the queue kernel, orchestration surfaces, workflow continuations, and trusted host-effect fencing."
+      title="What ships in 0.1.0a26"
+      description="SQL contract 0.3.1 includes the queue kernel, orchestration surfaces, workflow continuations, bounded operator projections, and trusted host-effect fencing."
     >
       <UPageGrid>
         <UPageCard
@@ -295,7 +295,7 @@ result = <span class="text-primary">await</span> tq.enqueue(DOUBLE, {<span class
     <UPageSection
       headline="Documentation"
       title="Read in order"
-      description="The public docs match the 0.1.0a19 package surface. Deep design specs live in the GitHub repo."
+      description="The public docs match the 0.1.0a26 package surface. Deep design specs live in the GitHub repo."
     >
       <UPageGrid class="lg:grid-cols-3">
         <UPageCard

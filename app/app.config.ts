@@ -33,7 +33,7 @@ export default defineAppConfig({
       'aria-label': 'OutlabsTaskq on GitHub'
     }, {
       'icon': 'i-lucide-package',
-      'to': 'https://github.com/outlabsio/outlabs-taskq/releases/tag/v0.1.0a19',
+      'to': 'https://github.com/outlabsio/outlabs-taskq/releases/tag/v0.1.0a26',
       'target': '_blank',
       'aria-label': 'outlabs-taskq releases'
     }]
@@ -61,7 +61,7 @@ export default defineAppConfig({
       links: [{
         icon: 'i-lucide-package',
         label: 'GitHub release',
-        to: 'https://github.com/outlabsio/outlabs-taskq/releases/tag/v0.1.0a19',
+        to: 'https://github.com/outlabsio/outlabs-taskq/releases/tag/v0.1.0a26',
         target: '_blank'
       }, {
         icon: 'i-lucide-book-open',

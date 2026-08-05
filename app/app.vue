@@ -4,7 +4,7 @@ const route = useRoute()
 const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl.replace(/\/$/, '')
 const canonicalUrl = computed(() => `${siteUrl}${route.path === '/' ? '' : `${route.path.replace(/\/$/, '')}/`}`)
-const isStaging = siteUrl.includes('auth-staging.')
+const isStaging = siteUrl.includes('taskq-staging.')
 
 const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'))
 const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
@@ -50,6 +50,7 @@ useHead(() => ({
           'name': 'OutlabsTaskq',
           'applicationCategory': 'DeveloperApplication',
           'operatingSystem': 'Cross-platform',
+          'softwareVersion': '0.1.0a26',
           'url': siteUrl,
           'codeRepository': 'https://github.com/outlabsio/outlabs-taskq',
           'downloadUrl': 'https://pypi.org/project/outlabs-taskq/',
