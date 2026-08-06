@@ -16,11 +16,19 @@ export default defineNuxtConfig({
     enabled: true
   },
 
-  // Umami: add a dedicated taskq website id before enabling production analytics.
-  // Do not reuse the auth.outlabs.io website id.
+  // Umami (self-hosted). Only inject on production builds so local `nuxt dev`
+  // does not pollute taskq.outlabs.io analytics. SPA navigations are tracked
+  // automatically by the Umami script via the History API.
+  // Dedicated taskq website id — do not reuse the auth.outlabs.io website id.
   app: {
     head: {
-      script: []
+      script: process.env.NODE_ENV === 'production'
+        ? [{
+            'src': 'https://analytics.outlabs.io/script.js',
+            'defer': true,
+            'data-website-id': '06a3855e-d074-40bd-bcbd-c1f7dbc03139'
+          }]
+        : []
     }
   },
 
