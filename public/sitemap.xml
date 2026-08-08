@@ -19,6 +19,7 @@
   <url><loc>https://taskq.outlabs.io/getting-started/introduction/</loc></url>
   <url><loc>https://taskq.outlabs.io/getting-started/quickstart/</loc></url>
   <url><loc>https://taskq.outlabs.io/getting-started/testing/</loc></url>
+  <url><loc>https://taskq.outlabs.io/operations/flow-control/</loc></url>
   <url><loc>https://taskq.outlabs.io/operations/housekeeping/</loc></url>
   <url><loc>https://taskq.outlabs.io/operations/redrive-and-dlq/</loc></url>
   <url><loc>https://taskq.outlabs.io/operations/standalone-scheduler/</loc></url>

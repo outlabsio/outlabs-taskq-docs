@@ -46,7 +46,7 @@ bun run brand:generate
 
 Markdown lives under `content/`. Navigation is file-based (numbered folders + `.navigation.yml`).
 
-The content target is package `0.1.0a26`, SQL contract `0.3.1`, and Protocol
-document revision `1.0.16`. Audit examples against the public
+The content target is package `0.1.0a27`, SQL contract `0.6.6`, and Protocol
+document revision `1.0.17`. Audit examples against the public
 `outlabs-taskq` tree and keep private consumer names, rollout evidence, and
 deployment paths out of this repository.

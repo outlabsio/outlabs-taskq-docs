@@ -80,13 +80,19 @@ const capabilities = [
     description: 'Fence co-resident domain mutations against the exact active TaskQ attempt.',
     icon: 'i-lucide-lock-keyhole',
     to: '/api/trusted-effects'
+  },
+  {
+    title: 'Flow control',
+    description: 'Per-queue circuit breaker, rate limits, in-flight caps, priority aging, smear, and health verdicts — off by default.',
+    icon: 'i-lucide-gauge',
+    to: '/operations/flow-control'
   }
 ]
 
 const docs = [
   {
     title: 'Read the introduction',
-    description: '0.1.0a26 / SQL 0.3.1 — what ships and why the contract is SQL-first.',
+    description: '0.1.0a27 / SQL 0.6.6 — what ships and why the contract is SQL-first.',
     icon: 'i-lucide-book-open',
     to: '/getting-started/introduction'
   },
@@ -138,7 +144,7 @@ defineOgImage('Docs', {
 
       <template #headline>
         <UBadge
-          label="Alpha · 0.1.0a26"
+          label="Alpha · 0.1.0a27"
           icon="i-lucide-package"
           color="primary"
           variant="subtle"
@@ -152,7 +158,7 @@ defineOgImage('Docs', {
       </template>
 
       <template #description>
-        OutlabsTaskq is a SQL-first job queue for Python fleets: claim, fence, retry, and settle through PL/pgSQL — with a typed Python client, complete operator CLI, standalone scheduler, optional FastAPI facade, follow-ups, workflows, schedules, continuations, and trusted effects. Current release: 0.1.0a26.
+        OutlabsTaskq is a SQL-first job queue for Python fleets: claim, fence, retry, and settle through PL/pgSQL — with a typed Python client, complete operator CLI, standalone scheduler, optional FastAPI facade, follow-ups, workflows, schedules, continuations, trusted effects, and a per-queue flow-control plane. Current release: 0.1.0a27.
       </template>
 
       <template #links>
@@ -274,8 +280,8 @@ result = <span class="text-primary">await</span> tq.enqueue(DOUBLE, {<span class
 
     <UPageSection
       headline="Capabilities"
-      title="What ships in 0.1.0a26"
-      description="SQL contract 0.3.1 includes the queue kernel, orchestration surfaces, workflow continuations, bounded operator projections, and trusted host-effect fencing."
+      title="What ships in 0.1.0a27"
+      description="SQL contract 0.6.6 includes the queue kernel, orchestration surfaces, workflow continuations, bounded operator projections, trusted host-effect fencing, and the per-queue flow-control plane — breaker, rate limits, caps, priority aging, counters, and health verdicts."
     >
       <UPageGrid>
         <UPageCard
@@ -295,7 +301,7 @@ result = <span class="text-primary">await</span> tq.enqueue(DOUBLE, {<span class
     <UPageSection
       headline="Documentation"
       title="Read in order"
-      description="The public docs match the 0.1.0a26 package surface. Deep design specs live in the GitHub repo."
+      description="The public docs match the 0.1.0a27 package surface. Deep design specs live in the GitHub repo."
     >
       <UPageGrid class="lg:grid-cols-3">
         <UPageCard
