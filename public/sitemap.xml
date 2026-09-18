@@ -23,6 +23,7 @@
   <url><loc>https://taskq.outlabs.io/operations/housekeeping/</loc></url>
   <url><loc>https://taskq.outlabs.io/operations/queue-boundaries/</loc></url>
   <url><loc>https://taskq.outlabs.io/operations/redrive-and-dlq/</loc></url>
+  <url><loc>https://taskq.outlabs.io/operations/runtime-first-upgrades/</loc></url>
   <url><loc>https://taskq.outlabs.io/operations/standalone-scheduler/</loc></url>
   <url><loc>https://taskq.outlabs.io/reference/configuration/</loc></url>
 </urlset>
