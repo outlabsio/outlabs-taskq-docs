@@ -50,7 +50,7 @@ useHead(() => ({
           'name': 'OutlabsTaskq',
           'applicationCategory': 'DeveloperApplication',
           'operatingSystem': 'Cross-platform',
-          'softwareVersion': '0.1.0a27',
+          'softwareVersion': '0.1.0a41',
           'url': siteUrl,
           'codeRepository': 'https://github.com/outlabsio/outlabs-taskq',
           'downloadUrl': 'https://pypi.org/project/outlabs-taskq/',
