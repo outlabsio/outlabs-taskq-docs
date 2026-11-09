@@ -46,8 +46,9 @@ bun run brand:generate
 
 Markdown lives under `content/`. Navigation is file-based (numbered folders + `.navigation.yml`).
 
-The content target is published package `0.1.0a41`, SQL contract `0.6.12`, and
-Protocol document revision `1.0.18`. Release a41 changes only the PostgreSQL 18
-restore verifier; a40 remains a compatible consumer runtime. Audit examples against the public
+The content target is published package `0.1.0a42`, SQL contract `0.6.12`, and
+Protocol document revision `1.0.18`. Release a42 improves worker outage recovery and releases undeliverable HTTP
+claims. It retains the a41 PostgreSQL 18 restore-verifier allowance; no new SQL
+migration is required from a40/a41. Audit examples against the public
 `outlabs-taskq` tree and keep private consumer names, rollout evidence, and
 deployment paths out of this repository.
