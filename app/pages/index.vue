@@ -91,6 +91,12 @@ const capabilities = [
 
 const docs = [
   {
+    title: 'Use Auth, Auth UI and TaskQ together',
+    description: 'Connect identity, administration, worker permissions and scheduled jobs.',
+    icon: 'i-lucide-workflow',
+    to: '/getting-started/auth-and-admin-ui'
+  },
+  {
     title: 'Read the introduction',
     description: '0.1.0a42 / SQL 0.6.12 — what ships and why the contract is SQL-first.',
     icon: 'i-lucide-book-open',

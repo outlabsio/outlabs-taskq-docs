@@ -53,6 +53,11 @@ export default defineAppConfig({
       'aria-label': 'Releases'
     }]
   },
+  relatedDocs: [
+    { label: 'Outlabs Auth', to: 'https://auth.outlabs.io/' },
+    { label: 'Auth UI', to: 'https://auth.outlabs.io/integrations/outlabsauth-ui/' },
+    { label: 'TaskQ', to: 'https://taskq.outlabs.io/' }
+  ],
   toc: {
     title: 'On this page',
     bottom: {
@@ -63,6 +68,18 @@ export default defineAppConfig({
         label: 'GitHub release',
         to: 'https://github.com/outlabsio/outlabs-taskq/releases',
         target: '_blank'
+      }, {
+        icon: 'i-lucide-book-open',
+        label: 'Use with Auth and Auth UI',
+        to: '/getting-started/auth-and-admin-ui'
+      }, {
+        icon: 'i-lucide-shield',
+        label: 'Auth handbook',
+        to: 'https://auth.outlabs.io/'
+      }, {
+        icon: 'i-lucide-layout-dashboard',
+        label: 'Auth UI guide',
+        to: 'https://auth.outlabs.io/integrations/outlabsauth-ui/'
       }, {
         icon: 'i-lucide-book-open',
         label: 'Design specs',
